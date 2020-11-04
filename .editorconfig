@@ -1,0 +1,9 @@
+root = true
+
+[*]
+end_of_line = lf      #quebra de linha padrao para windows e linux
+indent_style = space  #identacao por espacos
+indent_size = 2       #tamanho da identacao do codigo por 2 espacos
+charset = utf-8       #padrao para caracter
+trim_trailing_whitespace = true   #retirar espaco ao final da linha apos salvar
+insert_final_newline = true       #insere uma linha ao final do codigo apos salvar
