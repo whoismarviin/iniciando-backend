@@ -5,7 +5,7 @@ import IUsersDto from '@modules/users/dtos/ICreateUserDto'
 import { uuid } from 'uuidv4';
 
 
-class UserRepository implements IUsersRepository {
+class FakeUserRepository implements IUsersRepository {
     private users:User[]=[]
 
 
@@ -26,7 +26,7 @@ class UserRepository implements IUsersRepository {
   public async create(userData:IUsersDto):Promise<User>{
       const user = new User()
 
-      Object.assign({id:uuid()},userData);
+      Object.assign(user,{id:uuid()},userData);
 
       this.users.push(user)
 
@@ -43,4 +43,4 @@ class UserRepository implements IUsersRepository {
   }
 }
 
-export default UserRepository;
+export default FakeUserRepository;
