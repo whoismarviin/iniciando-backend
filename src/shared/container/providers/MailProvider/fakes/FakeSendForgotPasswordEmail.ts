@@ -1,4 +1,5 @@
 import IMailProvider from '../models/IMailProvider'
+import ISendMailDto from '../dtos/ISendMailDto'
 
 interface Message{
     to:string;
@@ -6,13 +7,10 @@ interface Message{
 }
 
 export default class FakeSendForgotPasswordEmail implements IMailProvider{
-    private messages:Message[]= []
+    private messages:ISendMailDto[]= []
     
-    public async sendEmail(to:string,body:string):Promise<void>{
-        this.messages.push({
-            to,
-            body
-        })
+    public async sendEmail(message:ISendMailDto):Promise<void>{
+        this.messages.push(message)
 
     }
 
